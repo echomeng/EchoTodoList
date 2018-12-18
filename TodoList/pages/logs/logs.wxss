@@ -1,8 +1,28 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+.logs-list {
+  border: 1rpx solid #708090;
+  border-radius: 10rpx;
 }
-.log-item {
-  margin: 10rpx;
+.item {
+  font-size: 30rpx;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #708090;
+}
+.item:last-child {
+  border: 0;
+}
+.item .log-name {
+  color: #DC143C;
+  display: inline-block;
+  width: 80%;
+}
+.item .log-behave {
+  color: black;
+  display: inline-block;
+  text-align: right;
+  width: 20%;
+}
+.item .log-time {
+  color: #708090;
+  display: block;
+  margin-top: 30rpx;
 }

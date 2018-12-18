@@ -1,13 +1,26 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class='container'>
+  <view class='header'>
+    <image class='add-image' src='../../assets/plus.png'></image>
+    <input class='add-input' value='{{ input }}' bindconfirm='inputConfirm' bindinput='inputChange' placeholder='something to do...'></input>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+  <block wx:if="{{ todos.length }}">
+    <view class='todo-list'>
+      <view class="item.{{item.completed?'completed':''}}" wx:for="{{ todos }}" wx:key="{{index}}" bindtap='handleTodo' data-index="{{index}}">
+        <icon class='checkbox' type="{{item.completed?'success':'circle'}}" />
+        <text class='name'>{{item.name}}</text>
+        <icon class='remove' type='clear' size='23' catchtap='removeClick' data-index="{{index}}" />
+      </view>
+    </view>
+    <view class='footer'>
+      <text class='toggleAllBtn' bindtap='toggleAll'>Toggle All</text>
+      <text class='leftCount'>{{ leftCount }}</text>
+      <text class='clearCompletedBtn' bindtap='clearCompleted'>Clear Completed</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='emptyView'>
+      <text class='emptyText1'>All completed!</text>
+      <text class='emptyText2'>Add something new right now.</text>
+    </view>
+  </block>
 </view>

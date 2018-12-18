@@ -1,21 +1,81 @@
-/**index.wxss**/
-.userinfo {
+.header {
+  padding: 30rpx;
+  border: solid 1rpx #FFC0CB;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  border-radius: 10rpx;
+}
+.header .add-image {
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 20rpx;
+}
+.header .add-input {
+  flex: 1;
+  font-size: 28rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.todo-list {
+  border: solid 1rpx #FFC0CB;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.todo-list .item {
+  display: flex;
+  align-items: center;
+  padding: 25rpx;
+  border-bottom: solid 1rpx #FFC0CB;
 }
-
-.usermotto {
-  margin-top: 200px;
+.todo-list .item:last-child {
+  border-bottom: 0; 
+}
+.todo-list .item .checkbox {
+  margin-right: 20rpx;
+}
+.todo-list .item .name {
+  flex: 1;
+  font-size: 30rpx;
+}
+.todo-list .item.completed {
+  background-color: #FFF0F5;
+}
+.todo-list .item.completed .name {
+  text-decoration: line-through;
+  color: #888;
+}
+.footer {
+  display: flex;
+}
+.footer .leftCount {
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  color: #888;
+}
+.footer .toggleAllBtn {
+  font-size: 30rpx;
+  color: #888;
+}
+.footer .clearCompletedBtn {
+  font-size: 30rpx;
+  color: #888;
+}
+.emptyView {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.emptyView .emptyText1 {
+  font-size: 70rpx;
+  text-align: center;
+  color: #888;
+  margin-top: 200rpx;
+}
+.emptyView .emptyText2 {
+  font-size: 40rpx;
+  text-align: center;
+  color: #8888;
+  margin-top: 30rpx;
 }

@@ -1,6 +1,11 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
+<view class='container'>
+  <block wx:if="{{logs.length}}">
+    <view class='logs-list'>
+      <view class='item' wx:for="{{logs}}" wx:key="{{index}}">
+        <text class='log-name'>Name:{{item.name}}</text>
+        <text class='log-behave'>{{item.behave}}</text>
+        <text class='log-time'>{{item.time}}</text>
+      </view>
+    </view>
   </block>
 </view>
